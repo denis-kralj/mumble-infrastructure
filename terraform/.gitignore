@@ -1,0 +1,5 @@
+.terraform/
+tfplan
+terraform.auto.tfvars
+*.tfstate
+*.tfstate.backup

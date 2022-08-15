@@ -1,0 +1,29 @@
+- name: Setup Mumble VoiP server and all dependencies
+  hosts: mumble-server
+
+  tasks:
+  - name: Update and upgrade apt packages
+    become: true
+    apt:
+      upgrade: yes
+      update_cache: yes
+
+  - name: Install mumble-server
+    become: yes
+    apt:
+      name:
+        - mumble-server
+      state: latest
+
+  - name: Configure mumble
+    become: yes
+    copy:
+      src: mumble-server.ini
+      dest: /etc/mumble-server.ini
+      owner: ubuntu
+
+  - name: Reboot mumble
+    become: yes
+    service:
+        name: mumble-server
+        state: restarted
