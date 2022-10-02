@@ -27,7 +27,6 @@ resource "aws_internet_gateway" "main" {
 }
 
 # route adds entry to VPC main routing table linking the internet gateway
-# points all trafic with the destination_cidr_block (?)
 resource "aws_route" "default" {
   route_table_id         = aws_vpc.main.default_route_table_id
   destination_cidr_block = "0.0.0.0/0"

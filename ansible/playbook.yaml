@@ -17,8 +17,8 @@
 
   - name: Configure mumble
     become: yes
-    copy:
-      src: mumble-server.ini
+    template:
+      src: mumble-server.j2
       dest: /etc/mumble-server.ini
       owner: ubuntu
 
@@ -27,3 +27,7 @@
     service:
         name: mumble-server
         state: restarted
+
+  - name: Mumble instance IP to share
+    debug:
+      msg: "{{ ansible_ssh_host }}"

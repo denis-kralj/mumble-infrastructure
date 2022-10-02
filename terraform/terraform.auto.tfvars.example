@@ -1,0 +1,16 @@
+ami = {
+  name                = "ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server*"
+  owner               = "099720109477" # Canonical
+  virtualization_type = "hvm"
+}
+
+vm_instance = {
+  instance_type = "t2.micro"
+  public_key    = "<YOUR PUBLIC KEY HERE>"
+}
+
+network = {
+  address_range = "10.10.10.0/24"
+}
+
+mumble_server_password = "<YOUR DESIRED MUMBLE SERVER PASSWORD HERE>"

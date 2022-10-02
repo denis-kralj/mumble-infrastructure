@@ -1,0 +1,17 @@
+; Documentation on this file can be found on https://wiki.mumble.info/wiki/Murmur.ini
+database=/var/lib/mumble-server/mumble-server.sqlite
+icesecretwrite=
+logfile=/var/log/mumble-server/mumble-server.log
+pidfile=/run/mumble-server/mumble-server.pid
+welcometext="<br /><h1>Heroes, assemble!</h1><br />"
+port=64738
+serverpassword={{ mumble_server_password }}
+bandwidth=128000
+users=10
+messageburst=5
+messagelimit=1
+allowping=true
+uname=ubuntu
+[Ice]
+Ice.Warn.UnknownProperties=1
+Ice.MessageSizeMax=65536
